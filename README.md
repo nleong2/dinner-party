@@ -7,4 +7,5 @@ Find a "good" table score for a given set of people and preference function.
 
 ### Execute Program
 `make`
+
 `./dinnerparty file1 file2 ...`
