@@ -28,17 +28,23 @@ DinnerParty::findBestTable(string filename)
 	cout << "Preference Matrix:" << endl;
 	printMatrix(preference_matrix, num_people, num_people);
 
+	// Initialize the first table by randomizing the seating arragement
+	initTable();
+
+	// Score the table
+	scoreOpposites();
+	scoreAdjacents();
+	scorePreference();
+	cout << "starting score: " << current_score << endl;
+
+/*
 	// Time algorithm for 30 seconds
 	time_t start_time = time(0);
 	time_t current_time;
 	int seconds = 0;
 	while(seconds < 1) {
-		// Initialize the first table by randomizing the seating arragement
-		if (best_score == 0)
-			initTable();
 		// Adjust the current seating arrangement
-		//else
-		//	adjustTable();
+		adjustTable();
 
 		// Score the table
 		scoreOpposites();
@@ -62,6 +68,7 @@ DinnerParty::findBestTable(string filename)
     cout << "Best table:" << endl;	
 	printMatrix(best_table, 2, table_len);
 	cout << "best score: " << best_score << endl;
+*/
 }
 
 void
