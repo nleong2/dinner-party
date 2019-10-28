@@ -1,5 +1,8 @@
-dinnerparty: dinnerparty.cpp
-	g++ -o dinnerparty dinnerparty.cpp
+dinnerparty: DinnerParty.o main.cpp
+	g++ -o dinnerparty DinnerParty.o main.cpp
+
+dinnerparty.o: DinnerParty.cpp DinnerParty.h
+	g++ -c DinnerParty.cpp
 
 clean:
-	rm dinnerparty
+	rm dinnerparty dinnerparty.o
