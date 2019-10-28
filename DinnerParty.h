@@ -12,18 +12,24 @@ public:
 	DinnerParty()  = default;
 	~DinnerParty() = default;
 
-	void  			 findBestTable(string);
-	unique_ptr<int*> getBestTable();
-	void             printMatrix(vector<vector<int> >&, int, int);
-	int              getScore();
+	void findBestTable(string, ofstream&, unsigned);
 
 private:
 	void initMatrix(ifstream&);
 	void initTable();
+	void organizePeople();
+	void randomizeTable();
+	void adjustTable();
+	int  scoreCurrentTable();
 	int  scoreAdjacents();
 	int  scoreOpposites();
 	int  scorePreference();
+	int  getScore();
+	void printMatrix(vector<vector<int> >&, int, int);
 	bool isA(int, vector<int>);
+	void swap(size_t, size_t, size_t, size_t);
+	void resetConfiguration();
+	void writeResults(ofstream&);
 
 	int 		         num_people;
 	int			         table_len;

@@ -19,14 +19,22 @@ int main(int argc, char** argv) {
 	DinnerParty dinner;
 
 	// Loop through each file given
-    ifstream file;
+    ofstream outfile("results.txt");
     for (size_t i = 1; i < argc; i++) {
         cout << "file: " << argv[i] << endl;
 
-		dinner.findBestTable(argv[i]);
-
+		dinner.findBestTable(argv[i], outfile, 0);
+		cout << endl;
+		dinner.findBestTable(argv[i], outfile, 25);
+		cout << endl;
+		dinner.findBestTable(argv[i], outfile, 50);
+		cout << endl;
+		dinner.findBestTable(argv[i], outfile, 100);
+		cout << endl;
 		cout << endl;
     }
+	outfile.close();
+
     return 0;
 }
 
