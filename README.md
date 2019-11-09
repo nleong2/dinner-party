@@ -19,6 +19,6 @@ Randomizing the algorithm helps discover new directions and lesson the impact of
 `./dinnerparty file1 file2 ...`
 
 ### Driver
-`main.cpp` will loop through each file and search the given input 4 time for ~30 seconds. Each file will be searched using 0%, 25%, 50% and 100% randomizations.
+`main.cpp` will loop through each file and search the given input for ~30 seconds to find a table with a resonable preference score. Each file will be searched using 0%, 25%, 50% and 100% randomizations.
 
 *This program was written for the 2019 Fall AI course at Portland State University.*
